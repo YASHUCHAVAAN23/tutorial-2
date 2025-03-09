@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investor Relations - Zomato</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+        }
+        .container {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+        .container h2 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        .content {
+            text-align: left;
+            margin-bottom: 1.5rem;
+        }
+        .content p {
+            margin-bottom: 10px;
+        }
+        .btn {
+            padding: 10px 20px;
+            background: #6a11cb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #4a0d99;
+        }
+        .message {
+            margin-top: 10px;
+            color: green;
+            font-weight: bold;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Investor Relations</h2>
+        <div class="content">
+            <p>Welcome to Zomato's Investor Relations page. Stay informed about our financial performance, corporate governance, and investment opportunities.</p>
+            <p>For investor inquiries, please click the button below.</p>
+        </div>
+        <button class="btn" id="contactBtn">Contact Us</button>
+        <p class="message" id="responseMessage">Thank you for your interest! Our team will get in touch soon.</p>
+    </div>
+    <script>
+        document.getElementById("contactBtn").addEventListener("click", function() {
+            document.getElementById("responseMessage").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("responseMessage").style.display = "none";
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

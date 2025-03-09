@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Restaurant - Zomato</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+        }
+        .container {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+        .container h2 {
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+        .input-group {
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background: #ff7e5f;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .submit-btn:hover {
+            background: #e76b52;
+        }
+        .message {
+            margin-top: 10px;
+            color: green;
+            font-weight: bold;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Add Your Restaurant</h2>
+        <form id="restaurantForm">
+            <div class="input-group">
+                <label for="name">Restaurant Name</label>
+                <input type="text" id="name" placeholder="Enter restaurant name" required>
+            </div>
+            <div class="input-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" placeholder="Enter location" required>
+            </div>
+            <div class="input-group">
+                <label for="cuisine">Cuisine Type</label>
+                <input type="text" id="cuisine" placeholder="Enter cuisine type" required>
+            </div>
+            <button type="submit" class="submit-btn">Add Restaurant</button>
+            <p class="message" id="successMessage">Restaurant Added Successfully!</p>
+        </form>
+    </div>
+    <script>
+        document.getElementById("restaurantForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.getElementById("successMessage").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("successMessage").style.display = "none";
+                document.getElementById("restaurantForm").reset();
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
